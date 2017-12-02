@@ -15,7 +15,7 @@
   "homepage": "https://github.com/RyleeAndrews/lab-26-react#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack-dev-server --inline --hot --public $C9_HOSTNAME --host $IP --port $PORT",
+    "watch": "webpack-dev-server --inline --hot",
     "build": "webpack"
   },
   "dependencies": {

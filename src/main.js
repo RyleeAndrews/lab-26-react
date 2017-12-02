@@ -1,6 +1,6 @@
-const faker = require('faker');
+import { say } from 'cowsay';
 import React from 'react';
-import ReactDom from 'react-dom'
+import ReactDom from 'react-dom';
 
 import '../src/style/main.scss';
 
