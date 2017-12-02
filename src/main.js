@@ -1,10 +1,27 @@
-import { say } from 'cowsay';
-import React from 'react';
-import ReactDom from 'react-dom';
-
+'use strict';
 import '../src/style/main.scss';
 
-class App extends React.component {
+
+import { say } from 'cowsay-browser';
+import React from 'react';
+import ReactDom from 'react-dom';
+import faker from 'faker';
+
+
+class Header extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return (
+      <header>
+        <h1> Generate Lorem Ipsum </h1>
+      </header>
+
+    );
+  }
+}
+class App extends React.Component {
 
   constructor(props){
     super(props);
@@ -12,22 +29,22 @@ class App extends React.component {
     this.generateRandomIpsum = this.generateRandomIpsum.bind(this);
 
     this.state = {
-      content: faker.word(),
+      content: 'Lorem paragraph',
     };
   }
 
   generateRandomIpsum(){
-    let content = faker.word();
+    let content = faker.fake('{{lorem.paragraphs}}');
     this.setState({content});
   }
   render(){
     return (
       <div>
-        <header>
-          <div className="content">{this.state.content}</div>
-          <h1> Generate Cowsay Lorem </h1>
-          <button onClick={this.generateRandomIpsum}></button>
-        </header>
+        <Header />
+        <pre>
+          {say({text: this.state.content})}
+        </pre>
+        <button onClick={this.generateRandomIpsum}>Click Me!</button>
       </div>
     );
   }
