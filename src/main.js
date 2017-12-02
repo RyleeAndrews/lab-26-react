@@ -15,7 +15,7 @@ class Header extends React.Component {
   render(){
     return (
       <header>
-        <h1> Generate Lorem Ipsum </h1>
+        <h1> Generate Cowsay Lorem </h1>
       </header>
 
     );
@@ -29,7 +29,7 @@ class App extends React.Component {
     this.generateRandomIpsum = this.generateRandomIpsum.bind(this);
 
     this.state = {
-      content: 'Lorem paragraph',
+      content: faker.fake('{{lorem.paragraphs}}'),
     };
   }
 
